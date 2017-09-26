@@ -47,9 +47,11 @@ public class UserRecommend {
             long userId = iterator.nextLong();
             //현재 유저 id에 해당하는 5개 아이템 추천.
             List<RecommendedItem> itemList = recommender.recommend(userId, requestItemSize);
-            logger.info("{}] {} =========", x++, userId);
+//            logger.info("{}] {} =========", x++, userId);
+            System.out.println(x++ +"] " + userId + "=============");
             for(RecommendedItem item : itemList) {
-                logger.info("> {} : {}", item.getValue(), item.getItemID());
+//                logger.info("> {} : {}", item.getItemID(), item.getValue());
+                System.out.println("> " + item.getItemID() + " : " + item.getValue());
             }
         }
     }
